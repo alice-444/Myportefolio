@@ -7,10 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        "blue-ribbon-50": "#edf9ff",
+        "blue-ribbon-100": "#d6f1ff",
+        "blue-ribbon-200": "#b5e8ff",
+        "blue-ribbon-300": "#83dbff",
+        "blue-ribbon-400": "#48c5ff",
+        "blue-ribbon-500": "#1ea5ff",
+        "blue-ribbon-600": "#0686ff",
+        "blue-ribbon-700": "#0070fa",
+        "blue-ribbon-800": "#0857c5",
+        "blue-ribbon-900": "#0d4c9b",
+        "blue-ribbon-950": "#0e2f5d",
       },
     },
   },
