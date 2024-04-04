@@ -7,10 +7,10 @@ import { Disclosure } from "@headlessui/react";
 const navigation = [
   { name: "Dashboard", href: "/", current: true },
   { name: "About", href: "/", current: false },
-  { name: "Education", href: "/", current: false },
-  { name: "Skill", href: "/", current: false },
-  { name: "Experiences", href: "/", current: false },
-  { name: "Projects", href: "/", current: false },
+  { name: "Education", href: "/dashboard/education", current: false },
+  { name: "Skill", href: "/dashboard/skills", current: false },
+  { name: "Experiences", href: "/dashboard/experiences", current: false },
+  { name: "Projects", href: "/dashboard/projects", current: false },
 ];
 
 const classNames = (...classes) => classes.filter(Boolean).join(" ");
