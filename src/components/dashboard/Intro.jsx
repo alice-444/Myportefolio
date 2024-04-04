@@ -1,4 +1,8 @@
 import Link from "next/link"
+import { MdWork } from "react-icons/md";
+import { GoProject } from "react-icons/go";
+import { GiProcessor } from "react-icons/gi";
+import { FaUserGraduate } from "react-icons/fa6";
 
 const Intro = () =>{
   return (
@@ -13,10 +17,10 @@ const Intro = () =>{
 
       <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
         <Link
-          className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 px-5 py-3 text-gray-500 transition hover:bg-gray-50 hover:text-blue-ribbon-400 hover:border-blue-ribbon-400 focus:outline-none focus:ring"
+          className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 px-5 py-3 text-gray-500 transition hover:bg-gray-50 hover:text-blue-ribbon-400 hover:border-blue-ribbon-400 focus:outline-none focus:ring shadow-lg"
           href={'/'}
         >
-          <span className="text-sm font-medium"> View Portefolio </span>
+          <span className="text-lg font-medium"> View Portefolio </span>
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,32 +39,36 @@ const Intro = () =>{
         </Link>
 
         <Link
-          className="block rounded-lg bg-blue-ribbon-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-ribbon-400 focus:outline-none focus:ring"
+          className="block rounded-lg bg-blue-ribbon-400 px-5 py-3 text-lg font-medium text-white transition hover:bg-red-300 focus:outline-none focus:ring shadow-xl"
           href={'/dashboard/about/'}
         >
           Create Data
+          <GiProcessor className="w-8 h-8"/>
         </Link> 
 
 
         <Link
-          className="block rounded-lg bg-blue-ribbon-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-ribbon-400 focus:outline-none focus:ring"
+          className="block rounded-lg bg-blue-ribbon-400 px-5 py-3 text-lg font-medium text-white transition hover:bg-red-300 focus:outline-none focus:ring shadow-xl"
           href={'/dashboard/education/'}
         >
           Create Education
+          <FaUserGraduate className="h-8 w-8"/>
         </Link> 
 
         <Link
-          className="block rounded-lg bg-blue-ribbon-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-ribbon-400 focus:outline-none focus:ring"
+          className="block rounded-lg bg-blue-ribbon-400 px-5 py-3 text-lg font-medium text-white transition hover:bg-red-300 focus:outline-none focus:ring shadow-xl"
           href={'/dashboard/experiences/'}
         >
           Create Experience(s)
+          <MdWork className="h-8 w-8"/>
         </Link>
 
         <Link
-          className="block rounded-lg bg-blue-ribbon-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-ribbon-400 focus:outline-none focus:ring"
+          className="block rounded-lg bg-blue-ribbon-400 px-5 py-3 text-lg font-medium text-white transition hover:bg-red-300 focus:outline-none focus:ring shadow-xl"
           href={'/dashboard/projects/'}
         >
           Create Project(s)
+          <GoProject className="h-8 w-8"/>
         </Link>
       </div>
     </div>

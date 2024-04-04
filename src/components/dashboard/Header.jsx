@@ -52,7 +52,7 @@ const Header = () => {
                       href="#"
                     >
                       {" "}
-                      History{" "}
+                      Education{" "}
                     </Link>
                   </li>
 
@@ -62,7 +62,7 @@ const Header = () => {
                       href="#"
                     >
                       {" "}
-                      Services{" "}
+                      Experiences{" "}
                     </Link>
                   </li>
 
@@ -73,16 +73,6 @@ const Header = () => {
                     >
                       {" "}
                       Projects{" "}
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className="text-gray-500 transition hover:text-gray-500/75"
-                      href="#"
-                    >
-                      {" "}
-                      Blog{" "}
                     </Link>
                   </li>
                 </ul>
