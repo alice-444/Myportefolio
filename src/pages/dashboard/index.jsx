@@ -1,10 +1,10 @@
 import Intro from "@/components/dashboard/Intro.jsx"
-import Header from "@/components/dashboard/Header.jsx"
+import Navbar from "@/components/dashboard/Navbar.jsx"
 
 const index = () =>{
   return (
     <div>
-        <Header />
+        <Navbar />
         <Intro/>
       <p>space home dashboard</p>
     </div>

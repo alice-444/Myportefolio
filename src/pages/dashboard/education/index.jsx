@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MdAddCircleOutline } from "react-icons/md";
 import Navbar from "@/components/dashboard/Navbar.jsx";
 
-const About = () => {
+const Education = () => {
   return (
     <div>
       <Navbar />
@@ -11,11 +11,11 @@ const About = () => {
           <div className="sm:flex sm:items-center sm:justify-between">
             <div className="text-center sm:text-left">
               <h1 className="text-xl font-semibold text-gray-900 sm:text-3xl">
-                All data general about me !
+                All data general about my education !
               </h1>
 
               <p className="mt-1.5 text-md text-gray-500">
-                Let's write our portefolio ! 🎉
+                Let's write our education ! 🎉
               </p>
             </div>
 
@@ -24,7 +24,7 @@ const About = () => {
                 className="block rounded-lg border-blue-ribbon-600 px-5 py-3 text-sm font-medium text-blue-ribbon-600 transition hover:bg-blue-ribbon-600 hover:text-white focus:outline-none focus:ring"
                 href={"/dashboard/about/newData"}
               >
-                Create Data
+                Create Education
                 <MdAddCircleOutline className="h-6 w-6" />
               </Link>
             </div>
@@ -39,4 +39,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Education;
