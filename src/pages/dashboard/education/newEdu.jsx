@@ -1,4 +1,4 @@
-import Skill from "@/components/dashboard/Skill.jsx";
+import Education from "@/components/dashboard/Skill.jsx";
 
 const NewSkill = () => {
   return (
