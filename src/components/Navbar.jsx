@@ -5,12 +5,13 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Disclosure } from "@headlessui/react";
 
 const navigation = [
-  { name: "Dashboard", href: "/", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "About", href: "/", current: false },
-  { name: "Education", href: "/dashboard/education", current: false },
-  { name: "Skills", href: "/dashboard/skills", current: false },
-  { name: "Experiences", href: "/dashboard/experiences", current: false },
-  { name: "Projects", href: "/dashboard/projects", current: false },
+  { name: "Education", href: "/education", current: false },
+  { name: "Skills", href: "/skills", current: false },
+  { name: "Experiences", href: "/experiences", current: false },
+  { name: "Projects", href: "/projects", current: false },
+  { name: "Contact", href: "/contact", current: false },
 ];
 
 const classNames = (...classes) => classes.filter(Boolean).join(" ");
@@ -38,7 +39,7 @@ const Navbar = () => {
                 <div className="flex-shrink-0 flex items-center">
                   <h1 className="cursor-pointer text-3xl font-semibold text-blue-ribbon-400">
                     <Link href="/">
-                      <span className="text-red-300">My</span>Portefolio
+                      <span className="text-red-300">my</span>Portefolio
                     </Link>
                   </h1>
                 </div>

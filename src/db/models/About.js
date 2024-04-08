@@ -27,14 +27,14 @@ const AboutSchema = new Schema({
   },
   profile_picture: {
     type: String,
-    required: true,
+    // required: true,
   },
   website: {
     type: String,
   },
-  social_media: {
-    type: Object,
-  },
+  // social_media: {
+  //   type: Object,
+  // },
 });
 
 const About = models.About || model("About", AboutSchema);
