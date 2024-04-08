@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
@@ -51,10 +52,10 @@ const Data = ({
       social_media,
     };
     if (_id) {
-      await axios.put("/api/dashboard/about", { ...data, _id });
+      await axios.put("/api/about", { ...data, _id });
       toast.success("Data updated!!");
     } else {
-      await axios.post("/api/dashboard/about", data);
+      await axios.post("/api/about", data);
       toast.success("Data created!!");
     }
 
@@ -62,7 +63,7 @@ const Data = ({
   }
 
   if (redirect) {
-    router.push("/dashboard/data");
+    router.push("/dashboard/about");
     return null;
   }
 

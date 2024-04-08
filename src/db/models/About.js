@@ -25,10 +25,10 @@ const AboutSchema = new Schema({
     type: String,
     required: true,
   },
-  profile_picture: {
-    type: String,
-    // required: true,
-  },
+  // profile_picture: {
+  //   type: String,
+  //   // required: true,
+  // },
   website: {
     type: String,
   },
