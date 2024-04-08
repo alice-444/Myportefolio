@@ -1,9 +1,31 @@
 import axios from "axios";
-// import { useRouter } from "next/navigation";
-// import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
-const Project = () => {
-  async function createProduct(ev) {
+const Project = ({
+  _id,
+  project_name: existingProjectName,
+  start_date: existingStartDate,
+  end_date: existingEndDate,
+  description: existingDescription,
+  project_link: existingProjectLink,
+  role: existingRole,
+  technologies_used: existingTechnologiesUsed,
+}) => {
+  const router = useRouter();
+  const [redirect, setRedirect] = useState(false);
+
+  const [project_name, setProjectName] = useState(existingProjectName || "");
+  const [start_date, setStartDate] = useState(existingStartDate || "");
+  const [end_date, setEndDate] = useState(existingEndDate || "");
+  const [description, setDescription] = useState(existingDescription || "");
+  const [project_link, setProjectLink] = useState(existingProjectLink || "");
+  const [role, setRole] = useState(existingRole || "");
+  const [technologies, setTechnologies] = useState(
+    existingTechnologiesUsed || ""
+  );
+
+  async function createProject(ev) {
     ev.preventDefault();
 
     const data = { title, description, images };
@@ -15,13 +37,17 @@ const Project = () => {
       toast.success("Project created!!");
     }
 
-    // Redirect after saving
     setRedirect(true);
+  }
+
+  if (redirect) {
+    router.push("/dashboard/projects");
+    return null;
   }
 
   return (
     <div className="mx-auto max-w-2xl">
-      <form onSubmit={createProduct} className="space-y-5">
+      <form onSubmit={createProject} className="space-y-5">
         <div className="grid grid-cols-2 items-center my-4">
           <label className="col-span-1 block text-lg font-medium text-gray-700 mb-3">
             Title
@@ -32,8 +58,8 @@ const Project = () => {
               className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
               placeholder="Username"
               required
-              //   value={title}
-              //   onChange={ev => setTitle(ev.target.value)}
+              value={project_name}
+              onChange={(ev) => setProjectName(ev.target.value)}
             />
           </div>
         </div>
@@ -46,10 +72,10 @@ const Project = () => {
             <textarea
               type="text"
               className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
-              placeholder="Description about me"
+              placeholder="Description about the project"
               rows={6}
-              //   value={description}
-              //   onChange={ev => setDescription(ev.target.value)}
+              value={description}
+              onChange={(ev) => setDescription(ev.target.value)}
             />
           </div>
         </div>
@@ -114,6 +140,86 @@ const Project = () => {
               </ReactSortable>
             </div>
           )} */}
+        </div>
+
+        <div className="grid grid-cols-2 items-center my-4">
+          <label className="col-span-1 block text-lg font-medium text-gray-700 mb-3">
+            Start date
+          </label>
+          <div className="col-span-2">
+            <input
+              type="date"
+              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
+              placeholder="Start Date"
+              required
+              value={start_date}
+              onChange={(ev) => setStartDate(ev.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 items-center my-4">
+          <label className="col-span-1 block text-lg font-medium text-gray-700 mb-3">
+            End date
+          </label>
+          <div className="col-span-2">
+            <input
+              type="date"
+              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
+              placeholder="End Date"
+              required
+              value={end_date}
+              onChange={(ev) => setEndDate(ev.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 items-center my-4">
+          <label className="col-span-1 block text-lg font-medium text-gray-700 mb-3">
+            Project's Link
+          </label>
+          <div className="col-span-2">
+            <input
+              type="text"
+              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
+              placeholder="project's link"
+              required
+              value={project_link}
+              onChange={(ev) => setProjectLink(ev.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 items-center my-4">
+          <label className="col-span-1 block text-lg font-medium text-gray-700 mb-3">
+            Role
+          </label>
+          <div className="col-span-2">
+            <input
+              type="text"
+              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
+              placeholder="role"
+              required
+              value={role}
+              onChange={(ev) => setRole(ev.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 items-center my-4">
+          <label className="col-span-1 block text-lg font-medium text-gray-700 mb-3">
+            Technologies used
+          </label>
+          <div className="col-span-2">
+            <input
+              type="text"
+              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
+              placeholder="Technologies used"
+              required
+              value={technologies}
+              onChange={(ev) => setTechnologies(ev.target.value)}
+            />
+          </div>
         </div>
 
         <div className="items-center my-4">

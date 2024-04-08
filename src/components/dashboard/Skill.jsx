@@ -31,7 +31,7 @@ const Skill = ({
   }
 
   if (redirect) {
-    router.push("/about");
+    router.push("/dashboard/skill");
     return null;
   }
 
@@ -140,7 +140,7 @@ const Skill = ({
             <textarea
               type="text"
               className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
-              placeholder="Short bio about me"
+              placeholder="Short description about the skill"
               rows={6}
               value={description}
               onChange={(ev) => setDescription(ev.target.value)}
