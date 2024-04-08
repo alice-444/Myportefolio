@@ -19,6 +19,11 @@ const Project = () => {
     setRedirect(true);
   }
 
+  if (redirect) {
+    router.push("/dashboard/projects");
+    return null;
+  }
+
   return (
     <div className="mx-auto max-w-2xl">
       <form onSubmit={createProduct} className="space-y-5">

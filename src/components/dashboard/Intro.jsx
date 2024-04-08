@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { MdWork } from "react-icons/md";
 import { GoProject } from "react-icons/go";
-import { GiProcessor } from "react-icons/gi";
 import { FaUserGraduate } from "react-icons/fa6";
+import { GiProcessor, GiSkills } from "react-icons/gi";
 
 const Intro = () => {
   return (
@@ -59,6 +59,16 @@ const Intro = () => {
               <span className="flex items-center">
                 Create Education
                 <FaUserGraduate className="h-8 w-8 ml-2" />
+              </span>
+            </Link>
+
+            <Link
+              className="block rounded-lg bg-blue-ribbon-400 px-5 py-3 text-lg font-medium text-white transition hover:bg-red-300 focus:outline-none focus:ring shadow-xl"
+              href={"/dashboard/skills/"}
+            >
+              <span className="flex items-center">
+                Create Skill(s)
+                <GiSkills className="h-8 w-8 ml-2" />
               </span>
             </Link>
 
