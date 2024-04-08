@@ -71,6 +71,22 @@ const Education = ({
           </div>
         </div>
 
+        <div className="grid grid-cols-2 items-center my-4">
+          <label className="col-span-1 block text-lg font-medium text-gray-700 mb-3">
+            Field of study
+          </label>
+          <div className="col-span-2">
+            <input
+              type="text"
+              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
+              placeholder="Formation"
+              required
+              value={field_of_study}
+              onChange={(ev) => setFieldOfStudy(ev.target.value)}
+            />
+          </div>
+        </div>
+
         {/* Images upload */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center">

@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { MdAddCircleOutline } from "react-icons/md";
 import Navbar from "@/components/dashboard/Navbar.jsx";
 
 const Projects = () => {
@@ -20,7 +22,7 @@ const Projects = () => {
             <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
               <Link
                 className="block rounded-lg border-blue-ribbon-600 px-5 py-3 text-sm font-medium text-blue-ribbon-600 transition hover:bg-blue-ribbon-600 hover:text-white focus:outline-none focus:ring"
-                href={"/dashboard/education/newEdu"}
+                href={"/dashboard/projects/newProject"}
               >
                 Create Project
                 <MdAddCircleOutline className="h-6 w-6" />

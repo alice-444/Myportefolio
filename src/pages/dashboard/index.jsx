@@ -1,14 +1,13 @@
-import Intro from "@/components/dashboard/Intro.jsx"
-import Navbar from "@/components/dashboard/Navbar.jsx"
+import Intro from "@/components/dashboard/Intro.jsx";
+import Navbar from "@/components/dashboard/Navbar.jsx";
 
-const index = () =>{
+const index = () => {
   return (
     <div>
-        <Navbar />
-        <Intro/>
-      <p>space home dashboard</p>
+      <Navbar />
+      <Intro />
     </div>
-  )
-}
+  );
+};
 
-export default index
+export default index;
