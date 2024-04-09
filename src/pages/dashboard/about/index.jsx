@@ -1,8 +1,27 @@
+import axios from "axios";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 import Navbar from "@/components/dashboard/Navbar.jsx";
 
-const About = () => {
+const AboutPage = () => {
+  const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(10);
+
+  useEffect(() => {
+    axios
+      .get("/api/about")
+      .then((response) => {
+        setDatas(response.data);
+        setLoading(false);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const datasToDisplay = datas.slice(startIndex, endIndex);
+
   return (
     <div>
       <Navbar />
@@ -31,7 +50,59 @@ const About = () => {
           </div>
           <hr className="my-8 h-px border-0 bg-gray-300" />
           <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-            No data
+            {datas.length === 0 ? (
+              <p className="w-full text-center">No data</p>
+            ) : (
+              <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-md border rounded">
+                <thead>
+                  <th className="px-4 py-2 font-medium text-gray-900">Index</th>
+                  <th className="px-4 py-2 font-medium text-gray-900">
+                    Username
+                  </th>
+                  <th className="px-4 py-2 font-medium text-gray-900">Age</th>
+                  <th className="px-4 py-2 font-medium text-gray-900">
+                    Location
+                  </th>
+                  <th className="px-4 py-2 font-medium text-gray-900">Email</th>
+                  <th className="px-4 py-2 font-medium text-gray-900">Phone</th>
+                  <th className="px-4 py-2 font-medium text-gray-900">
+                    Short Bio
+                  </th>
+                  <th className="px-4 py-2 font-medium text-gray-900">
+                    Website
+                  </th>
+                </thead>
+                {datasToDisplay.map((data, index) => (
+                  <tbody className="divide-y divide-gray-200" key={data._id}>
+                    <tr>
+                      <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                        {data.username}
+                      </td>
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-700 truncate max-w-md">
+                        {data.short_bio}
+                      </td>
+                      <td className="whitespace-nowrap px-4 py-2 text-gray-700">
+                        {data.age}
+                      </td>
+                      <td className="whitespace-nowrap px-4 py-2 gap-4 flex">
+                        <Link
+                          href={"/dashboard/about/edit/" + data._id}
+                          className="inline-block rounded bg-green-500 px-4 py-2 text-xs font-medium text-white hover:bg-green-700"
+                        >
+                          Edit
+                        </Link>
+                        <Link
+                          href={"/dashboard/about/delete/" + data._id}
+                          className="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700"
+                        >
+                          Delete
+                        </Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                ))}
+              </table>
+            )}
           </div>
         </div>
       </header>
@@ -39,4 +110,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;

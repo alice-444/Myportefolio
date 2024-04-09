@@ -37,11 +37,11 @@ const Education = ({
       description,
     };
     if (_id) {
-      await axios.put("/api/dashboard/education", { ...data, _id });
+      await axios.put("/api/education", { ...data, _id });
       toast.success("Education updated!!");
     } else {
-      await axios.post("/api/dashboard/education", data);
-      toast.success("Education created!!");
+      await axios.post("/api/education", data);
+      toast.success("Education created!");
     }
 
     setRedirect(true);

@@ -1,8 +1,14 @@
+import axios from "axios";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 import Navbar from "@/components/dashboard/Navbar.jsx";
 
+const pageSize = 10;
+
 const Skills = () => {
+  const [skills, setSkills] = useState([]);
+
   return (
     <div>
       <Navbar />
