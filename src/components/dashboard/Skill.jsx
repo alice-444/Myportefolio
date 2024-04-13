@@ -5,14 +5,12 @@ import { useEffect, useState } from "react";
 const Skill = ({
   _id,
   skill_name: existingSkillName,
-  skill_level: existingSkillLevel,
   description: existingDescription,
 }) => {
   const router = useRouter();
   const [redirect, setRedirect] = useState(false);
 
   const [skill_name, setSkillName] = useState(existingSkillName || "");
-  const [skill_level, setSkillLevel] = useState(existingSkillLevel || "");
   const [description, setDescription] = useState(existingDescription || "");
 
   async function createSkill(ev) {
@@ -114,22 +112,6 @@ const Skill = ({
               </ReactSortable>
             </div>
           )} */}
-        </div>
-
-        <div className="grid grid-cols-2 items-center my-4">
-          <label className="col-span-1 block text-lg font-medium text-gray-700 mb-3">
-            Level
-          </label>
-          <div className="col-span-2">
-            <input
-              type="text"
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
-              placeholder="Level"
-              required
-              value={skill_level}
-              onChange={(ev) => setSkillLevel(ev.target.value)}
-            />
-          </div>
         </div>
 
         <div className="grid grid-cols-2 items-center my-4">

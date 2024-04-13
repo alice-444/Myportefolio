@@ -5,8 +5,8 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Disclosure } from "@headlessui/react";
 
 const navigation = [
-  { name: "Dashboard", href: "/", current: true },
-  { name: "About", href: "/", current: false },
+  { name: "Dashboard", href: "/dashboard", current: true },
+  { name: "About", href: "/dashboard/about", current: false },
   { name: "Education", href: "/dashboard/education", current: false },
   { name: "Skills", href: "/dashboard/skills", current: false },
   { name: "Experiences", href: "/dashboard/experiences", current: false },

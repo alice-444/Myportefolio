@@ -32,9 +32,9 @@ const AboutSchema = new Schema({
   website: {
     type: String,
   },
-  // social_media: {
-  //   type: Object,
-  // },
+  social_media: {
+    type: String,
+  },
 });
 
 const About = models.About || model("About", AboutSchema);
