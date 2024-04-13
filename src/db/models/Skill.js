@@ -5,10 +5,6 @@ const SkillSchema = new Schema({
     type: String,
     required: true,
   },
-  skill_level: {
-    type: String,
-    required: true,
-  },
   description: {
     type: String,
     required: true,
