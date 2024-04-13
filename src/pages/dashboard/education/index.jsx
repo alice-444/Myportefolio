@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 import Navbar from "@/components/dashboard/Navbar.jsx";
 
-const AboutPage = () => {
+const EducationPage = () => {
   const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [startIndex, setStartIndex] = useState(0);
@@ -28,29 +28,25 @@ const AboutPage = () => {
     <div>
       <Navbar />
       <header>
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-      <div className="text-center sm:text-left">
-            <h1 className="text-xl font-semibold text-gray-900 sm:text-3xl">
-              All data general about my education !
-            </h1>
-
-            <p className="mt-1.5 text-md text-gray-500">
-              Let's write our data about education ! 🎉
-            </p>
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+          <div className="sm:flex sm:items-center sm:justify-between">
+            <div className="text-center sm:text-left">
+              <h1 className="text-xl font-semibold text-gray-900 sm:text-3xl">
+                All data general about my data !
+              </h1>
+            </div>
+            <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
+              <Link
+                className="block rounded-lg border-blue-ribbon-600 px-5 py-3 text-sm font-medium text-blue-ribbon-600 transition hover:bg-blue-ribbon-600 hover:text-white focus:outline-none focus:ring"
+                href={"/dashboard/education/newEdu"}
+              >
+                Create Data
+                <MdAddCircleOutline className="h-6 w-6" />
+              </Link>
+            </div>
           </div>
           <hr className="my-8 h-px border-0 bg-gray-300" />
-
-          <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-            <Link
-              className="block rounded-lg border-blue-ribbon-600 px-5 py-3 text-sm font-medium text-blue-ribbon-600 transition hover:bg-blue-ribbon-600 hover:text-white focus:outline-none focus:ring"
-              href={"/dashboard/education/newEdu"}
-            >
-              Create Data
-              <MdAddCircleOutline className="h-6 w-6" />
-            </Link>
-          </div>
         </div>
-        
       </header>
       <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md">
         {datas.length === 0 ? (
@@ -60,13 +56,13 @@ const AboutPage = () => {
             <thead class="bg-gray-50">
               <tr>
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                  Formation
+                Formation
                 </th>
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                  Institution
+                Institution
                 </th>
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                Field of study
+                Field Of Study
                 </th>
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
                   Degree
@@ -75,28 +71,19 @@ const AboutPage = () => {
                 Start date
                 </th>
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                End Date
+                End date
                 </th>
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
-                Description
+              Description
                 </th>
-                <th
-                  scope="col"
-                  class="px-6 py-4 font-medium text-gray-900"
-                ></th>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-              {datasToDisplay.map((data, index) => (
+              {datas.map((data, index) => (
                 <tr class="hover:bg-gray-50" key={data._id}>
-                  <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-                    <div class="text-sm">
-                      <div class="font-medium text-gray-700">
-                        {data.formation}
-                      </div>
-                      <div class="text-gray-400">{data.email}</div>
-                    </div>
-                  </th>
+                  
+                  <td class="px-6 py-4">{data.formation}</td>
                   <td class="px-6 py-4">{data.institution}</td>
                   <td class="px-6 py-4">{data.field_of_study}</td>
                   <td class="px-6 py-4">{data.degree}</td>
@@ -120,7 +107,7 @@ const AboutPage = () => {
         )}
       </div>
     </div>
-  );
+    )
 };
 
-export default AboutPage;
+export default EducationPage;

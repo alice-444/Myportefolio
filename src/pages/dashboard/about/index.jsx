@@ -29,26 +29,23 @@ const AboutPage = () => {
       <Navbar />
       <header>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-          <div className="text-center sm:text-left">
-            <h1 className="text-xl font-semibold text-gray-900 sm:text-3xl">
-              All data general about my data !
-            </h1>
-
-            <p className="mt-1.5 text-md text-gray-500">
-              Let's write our data about ! 🎉
-            </p>
+          <div className="sm:flex sm:items-center sm:justify-between">
+            <div className="text-center sm:text-left">
+              <h1 className="text-xl font-semibold text-gray-900 sm:text-3xl">
+                All data general about my data !
+              </h1>
+            </div>
+            <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
+              <Link
+                className="block rounded-lg border-blue-ribbon-600 px-5 py-3 text-sm font-medium text-blue-ribbon-600 transition hover:bg-blue-ribbon-600 hover:text-white focus:outline-none focus:ring"
+                href={"/dashboard/about/newData"}
+              >
+                Create Data
+                <MdAddCircleOutline className="h-6 w-6" />
+              </Link>
+            </div>
           </div>
           <hr className="my-8 h-px border-0 bg-gray-300" />
-
-          <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-            <Link
-              className="block rounded-lg border-blue-ribbon-600 px-5 py-3 text-sm font-medium text-blue-ribbon-600 transition hover:bg-blue-ribbon-600 hover:text-white focus:outline-none focus:ring"
-              href={"/dashboard/projects/newData"}
-            >
-              Create Data
-              <MdAddCircleOutline className="h-6 w-6" />
-            </Link>
-          </div>
         </div>
       </header>
       <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md">
@@ -67,7 +64,6 @@ const AboutPage = () => {
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
                   Location
                 </th>
-
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
                   Phone
                 </th>
@@ -77,14 +73,11 @@ const AboutPage = () => {
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
                   Website
                 </th>
-                <th
-                  scope="col"
-                  class="px-6 py-4 font-medium text-gray-900"
-                ></th>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-              {datasToDisplay.map((data, index) => (
+              {datas.map((data, index) => (
                 <tr class="hover:bg-gray-50" key={data._id}>
                   <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
                     <div class="text-sm">

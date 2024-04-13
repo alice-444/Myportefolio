@@ -1,6 +1,7 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Skill = ({
   _id,
@@ -16,12 +17,12 @@ const Skill = ({
   async function createSkill(ev) {
     ev.preventDefault();
 
-    const data = { skill_name, skill_level, description };
+    const data = { skill_name, description };
     if (_id) {
-      await axios.put("/api/dashboard/skill", { ...data, _id });
+      await axios.put("/api/skill", { ...data, _id });
       toast.success("Skill updated!!");
     } else {
-      await axios.post("/api/dashboard/skill", data);
+      await axios.post("/api/skill", data);
       toast.success("Skill created!!");
     }
 
@@ -29,7 +30,7 @@ const Skill = ({
   }
 
   if (redirect) {
-    router.push("/dashboard/skill");
+    router.push("/dashboard/skills");
     return null;
   }
 
