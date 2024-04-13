@@ -35,6 +35,7 @@ async function handlePost(req, res) {
     const {
       formation,
       institution,
+      field_of_study,
       degree,
       start_date,
       end_date,
@@ -44,6 +45,7 @@ async function handlePost(req, res) {
     const EducationDoc = await Education.create({
       formation,
       institution,
+      field_of_study,
       degree,
       start_date,
       end_date,
@@ -83,6 +85,7 @@ async function handlePut(req, res) {
       _id,
       formation,
       institution,
+      field_of_study,
       degree,
       start_date,
       end_date,
@@ -99,6 +102,7 @@ async function handlePut(req, res) {
       {
         formation,
         institution,
+        field_of_study,
         degree,
         start_date,
         end_date,
