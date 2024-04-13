@@ -9,10 +9,10 @@ const ProjectSchema = new Schema({
     type: String,
     required: true,
   },
-  project_picture: {
-    type: String,
-    required: true,
-  },
+  // project_picture: {
+  //   type: String,
+  //   required: true,
+  // },
   start_date: {
     type: Date,
     required: true,
@@ -27,7 +27,7 @@ const ProjectSchema = new Schema({
     type: String,
   },
   technologies_used: {
-    type: [String],
+    type: String,
   },
 });
 

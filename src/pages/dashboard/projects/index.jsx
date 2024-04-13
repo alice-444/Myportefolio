@@ -1,8 +1,29 @@
+import axios from "axios";
 import Link from "next/link";
+import { FiEdit3 } from "react-icons/fi";
+import { GoTrash } from "react-icons/go";
+import { useEffect, useState } from "react";
 import { MdAddCircleOutline } from "react-icons/md";
 import Navbar from "@/components/dashboard/Navbar.jsx";
 
 const Projects = () => {
+  const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(10);
+
+  useEffect(() => {
+    axios
+      .get("/api/project")
+      .then((response) => {
+        setDatas(response.data);
+        setLoading(false);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  const datasToDisplay = datas.slice(startIndex, endIndex);
+
   return (
     <div>
       <Navbar />
@@ -30,11 +51,72 @@ const Projects = () => {
             </div>
           </div>
           <hr className="my-8 h-px border-0 bg-gray-300" />
-          <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-            No data
-          </div>
         </div>
       </header>
+      <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md">
+        {datas.length === 0 ? (
+          <p className="w-full text-center">No data</p>
+        ) : (
+          <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+            <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                  Name
+                </th>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                  Description
+                </th>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                  picture
+                </th>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                  Start Date
+                </th>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                  End Date
+                </th>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                  Link
+                </th>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                  Role
+                </th>
+                <th scope="col" class="px-6 py-4 font-medium text-gray-900">
+                  technologies_used
+                </th>
+                <th
+                  scope="col"
+                  class="px-6 py-4 font-medium text-gray-900"
+                ></th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+              {datas.map((data, index) => (
+                <tr class="hover:bg-gray-50" key={data._id}>
+                  <td class="px-6 py-4">{data.project_name}</td>
+                  <td class="px-6 py-4">{data.description}</td>
+                  {/* <td class="px-6 py-4">{data.project_picture}</td> */}
+                  <td class="px-6 py-4">{data.start_date}</td>
+                  <td class="px-6 py-4">{data.end_date}</td>
+                  <td class="px-6 py-4">{data.project_link}</td>
+                  <td class="px-6 py-4">{data.role}</td>
+                  <td class="px-6 py-4">{data.technologies_used}</td>
+                  <td class="px-6 py-4">
+                    <div class="flex justify-end gap-4">
+                      <a x-data="{ tooltip: 'Delete' }" href="#">
+                        <GoTrash className="w-6 h-6" />
+                      </a>
+                      <a x-data="{ tooltip: 'Edit' }" href="#">
+                        <FiEdit3 className="w-6 h-6" />
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
     </div>
   );
 };
