@@ -1,5 +1,5 @@
-import Skill from "@/db/models/Skill.js";
 import connectDB from "@/db/mongoConnect.js";
+import Experience from "@/db/models/Experience.js";
 
 export default async function handle(req, res) {
   const { method } = req;
@@ -10,7 +10,7 @@ export default async function handle(req, res) {
     if (method === "POST") {
       return handlePost(req, res);
     }
-    
+
     if (method === "GET") {
       return handleGet(req, res);
     }
@@ -32,14 +32,18 @@ export default async function handle(req, res) {
 
 async function handlePost(req, res) {
   try {
-    const { skill_name, description } = req.body;
+    const { company_name, position, start_date, end_date, description } =
+      req.body;
 
-    const SkillDoc = await Skill.create({
-      skill_name,
+    const ExpDoc = await Experience.create({
+      company_name,
+      position,
+      start_date,
+      end_date,
       description,
     });
 
-    res.status(201).json(SkillDoc);
+    res.status(201).json(ExpDoc);
   } catch (error) {
     console.error("Error creating data:", error);
     res.status(500).json({ error: "Error creating data" });
@@ -49,16 +53,16 @@ async function handlePost(req, res) {
 async function handleGet(req, res) {
   try {
     if (req.query?.id) {
-      const skill = await Skill.findById(req.query.id);
+      const exp = await Experience.findById(req.query.id);
 
-      if (!skill) {
+      if (!exp) {
         return res.status(404).json({ error: "Data not found" });
       }
 
-      res.json(skill);
+      res.json(exp);
     } else {
-      const skills = await Skill.find();
-      res.json(skills);
+      const exps = await Experience.find();
+      res.json(exps);
     }
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -68,17 +72,21 @@ async function handleGet(req, res) {
 
 async function handlePut(req, res) {
   try {
-    const { _id, skill_name, description } = req.body;
+    const { _id, company_name, position, start_date, end_date, description } =
+      req.body;
 
-    const existingSkill = await Skill.findById(_id);
+    const existingExp = await Experience.findById(_id);
 
-    if (!existingSkill) {
+    if (!existingExp) {
       return res.status(404).json({ error: "Data not found" });
     }
-    await Skill.updateOne(
+    await Experience.updateOne(
       { _id },
       {
-        skill_name,
+        company_name,
+        position,
+        start_date,
+        end_date,
         description,
       }
     );
@@ -94,13 +102,13 @@ async function handleDelete(req, res) {
   try {
     const dataId = req.query?.id;
     if (dataId) {
-      const dataToDelete = await Skill.findById(dataId);
+      const dataToDelete = await Experience.findById(dataId);
 
       if (!dataToDelete) {
         return res.status(404).json({ error: "Data not found" });
       }
 
-      await Skill.deleteOne({ _id: dataId });
+      await Experience.deleteOne({ _id: dataId });
       res.status(200).json({ message: "Data deleted successfully" });
     } else {
       res.status(400).json({ error: "Missing data ID in the request" });
