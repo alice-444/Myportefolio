@@ -51,7 +51,6 @@ async function handlePost(req, res) {
       email,
       phone,
       short_bio,
-      profile_picture,
       website,
       social_media,
     });

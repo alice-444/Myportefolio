@@ -1,4 +1,4 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const AboutSchema = new Schema({
   username: {
@@ -25,10 +25,6 @@ const AboutSchema = new Schema({
     type: String,
     required: true,
   },
-  // profile_picture: {
-  //   type: String,
-  //   // required: true,
-  // },
   website: {
     type: String,
   },
@@ -37,6 +33,6 @@ const AboutSchema = new Schema({
   },
 });
 
-const About = models.About || model("About", AboutSchema);
+const About = model("About", AboutSchema);
 
 export default About;

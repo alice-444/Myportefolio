@@ -1,4 +1,4 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const SkillSchema = new Schema({
   skill_name: {
@@ -11,6 +11,6 @@ const SkillSchema = new Schema({
   },
 });
 
-const Skill = models.Skill || model("Skill", SkillSchema);
+const Skill = model("Skill", SkillSchema);
 
 export default Skill;
