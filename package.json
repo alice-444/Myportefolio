@@ -12,15 +12,19 @@
     "@headlessui/react": "^1.7.18",
     "axios": "^1.6.8",
     "cloudinary": "^2.1.0",
+    "framer-motion": "^11.0.28",
     "mongodb": "^6.5.0",
     "mongoose": "^8.2.4",
     "multiparty": "^4.2.3",
     "next": "14.1.4",
     "react": "^18",
+    "react-animated-numbers": "^0.18.0",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.0.1",
-    "react-sortablejs": "^6.1.4"
+    "react-multi-carousel": "^2.8.5",
+    "react-sortablejs": "^6.1.4",
+    "react-type-animation": "^3.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

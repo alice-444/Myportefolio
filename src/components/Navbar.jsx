@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useContext } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -6,10 +7,10 @@ import { Disclosure } from "@headlessui/react";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "About", href: "/", current: false },
-  { name: "Education", href: "/education", current: false },
-  { name: "Skills", href: "/skills", current: false },
-  { name: "Experiences", href: "/experiences", current: false },
+  // { name: "About", href: "/", current: false },
+  // { name: "Education", href: "/education", current: false },
+  // { name: "Skills", href: "/skills", current: false },
+  // { name: "Experiences", href: "/experiences", current: false },
   { name: "Projects", href: "/projects", current: false },
   { name: "Contact", href: "/contact", current: false },
 ];
@@ -39,7 +40,7 @@ const Navbar = () => {
                 <div className="flex-shrink-0 flex items-center">
                   <h1 className="cursor-pointer text-3xl font-semibold text-blue-ribbon-400">
                     <Link href="/">
-                      <span className="text-red-300">my</span>Portefolio
+                      <Image scr=""/>
                     </Link>
                   </h1>
                 </div>
@@ -52,7 +53,7 @@ const Navbar = () => {
                         className={classNames(
                           item.current
                             ? "bg-blue-ribbon-400 text-white shadow-lg"
-                            : "text-gray-300 hover:bg-blue-ribbon-400 hover:text-white hover:shadow-lg",
+                            : "text-gray-300 hover:bg-blue-ribbon-500 hover:text-white hover:shadow-lg",
                           "rounded-lg px-3 py-2 text-xl font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
