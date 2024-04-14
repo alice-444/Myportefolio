@@ -7,7 +7,7 @@ const AnimatedNumbers = dynamic(
   { ssr: false }
 );
 
-const achievementsList = [
+const successList = [
   {
     metric: "Projects",
     value: "10",
@@ -15,21 +15,21 @@ const achievementsList = [
   },
 ];
 
-const AchievementsSection = () => {
+const Success = () => {
   return (
     <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
       <div className="rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
-        {achievementsList.map((achievement, index) => {
+        {successList.map((success, index) => {
           return (
             <div
               key={index}
               className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
             >
               <h2 className="text-blue-ribbon-400 text-4xl font-bold flex flex-row">
-                {achievement.prefix}
+                {success.prefix}
                 <AnimatedNumbers
                   includeComma
-                  animateToNumber={parseInt(achievement.value)}
+                  animateToNumber={parseInt(success.value)}
                   locale="en-US"
                   className="text-blue-ribbon-500 text-4xl font-bold"
                   configs={(_, index) => {
@@ -40,9 +40,9 @@ const AchievementsSection = () => {
                     };
                   }}
                 />
-                {achievement.postfix}
+                {success.postfix}
               </h2>
-              <p className="text-gray-500 text-base">{achievement.metric}</p>
+              <p className="text-gray-500 text-base">{success.metric}</p>
             </div>
           );
         })}
@@ -51,4 +51,4 @@ const AchievementsSection = () => {
   );
 };
 
-export default AchievementsSection;
+export default Success;

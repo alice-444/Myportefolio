@@ -13,7 +13,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="text-blue-ribbon-300 mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+          <h1 className="text-blue-ribbon-300 mb-4 text-4xl sm:text-5xl lg:text-5xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-ribbon-400 to-blue-ribbon-600">
               Hi, I&apos;m{" "}
             </span>
