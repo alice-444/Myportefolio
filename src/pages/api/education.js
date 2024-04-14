@@ -30,6 +30,27 @@ export default async function handle(req, res) {
   }
 }
 
+/**
+ * @swagger
+ * /api/education:
+ *   post:
+ *     summary: Create education data
+ *     description: Create new education data
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Education'
+ *     responses:
+ *       '201':
+ *         description: Successfully created education data
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Education'
+ */
+
 async function handlePost(req, res) {
   try {
     const {
@@ -59,6 +80,23 @@ async function handlePost(req, res) {
   }
 }
 
+/**
+ * @swagger
+ * /api/education:
+ *   get:
+ *     summary: Get education data
+ *     description: Retrieve education data from the database
+ *     responses:
+ *       '200':
+ *         description: Successfully retrieved education data
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Education'
+ */
+
 async function handleGet(req, res) {
   try {
     if (req.query?.id) {
@@ -78,6 +116,23 @@ async function handleGet(req, res) {
     res.status(500).json({ error: "Error fetching datas" });
   }
 }
+
+/**
+ * @swagger
+ * /api/education:
+ *   put:
+ *     summary: Update education data
+ *     description: Update existing education data
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Education'
+ *     responses:
+ *       '200':
+ *         description: Successfully updated education data
+ */
 
 async function handlePut(req, res) {
   try {
@@ -116,6 +171,24 @@ async function handlePut(req, res) {
     res.status(500).json({ error: "Error updating data" });
   }
 }
+
+/**
+ * @swagger
+ * /api/education:
+ *   delete:
+ *     summary: Delete education data
+ *     description: Delete existing education data
+ *     parameters:
+ *       - in: query
+ *         name: id
+ *         required: true
+ *         description: ID of the data to delete
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Successfully deleted education data
+ */
 
 async function handleDelete(req, res) {
   try {

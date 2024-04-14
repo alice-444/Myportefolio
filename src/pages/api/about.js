@@ -30,6 +30,44 @@ export default async function handle(req, res) {
   }
 }
 
+/**
+ * @swagger
+ * /api/about:
+ *   post:
+ *     summary: Create a new about data
+ *     description: Create a new about data with the provided information
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *               age:
+ *                 type: number
+ *               location:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               phone:
+ *                 type: string
+ *               short_bio:
+ *                 type: string
+ *               website:
+ *                 type: string
+ *               social_media:
+ *                 type: object
+ *     responses:
+ *       '201':
+ *         description: Successfully created about data
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/About'
+ */
+
 async function handlePost(req, res) {
   try {
     const {
@@ -62,6 +100,23 @@ async function handlePost(req, res) {
   }
 }
 
+/**
+ * @swagger
+ * /api/about:
+ *   get:
+ *     summary: Get all about data
+ *     description: Retrieve all about data from the database
+ *     responses:
+ *       '200':
+ *         description: Successfully retrieved about data
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/About'
+ */
+
 async function handleGet(req, res) {
   try {
     if (req.query?.id) {
@@ -82,6 +137,42 @@ async function handleGet(req, res) {
   }
 }
 
+/**
+ * @swagger
+ * /api/about:
+ *   put:
+ *     summary: Update an existing about data
+ *     description: Update an existing about data with the provided information
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               _id:
+ *                 type: string
+ *               username:
+ *                 type: string
+ *               age:
+ *                 type: number
+ *               location:
+ *                 type: string
+ *               email:
+ *                 type: string
+ *               phone:
+ *                 type: string
+ *               short_bio:
+ *                 type: string
+ *               website:
+ *                 type: string
+ *               social_media:
+ *                 type: object
+ *     responses:
+ *       '200':
+ *         description: Successfully updated about data
+ */
+
 async function handlePut(req, res) {
   try {
     const {
@@ -92,7 +183,6 @@ async function handlePut(req, res) {
       email,
       phone,
       short_bio,
-      profile_picture,
       website,
       social_media,
     } = req.body;
@@ -123,6 +213,26 @@ async function handlePut(req, res) {
     res.status(500).json({ error: "Error updating data" });
   }
 }
+
+/**
+ * @swagger
+ * /api/about:
+ *   delete:
+ *     summary: Delete an about data
+ *     description: Delete an about data with the provided ID
+ *     parameters:
+ *       - in: query
+ *         name: id
+ *         required: true
+ *         description: ID of the about data to delete
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Successfully deleted about data
+ *       '404':
+ *         description: Data not found
+ */
 
 async function handleDelete(req, res) {
   try {
