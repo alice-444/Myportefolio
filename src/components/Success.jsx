@@ -13,6 +13,21 @@ const successList = [
     value: "10",
     postfix: "+",
   },
+  {
+    metric: "Projects",
+    value: "10",
+    postfix: "+",
+  },
+  {
+    metric: "Projects",
+    value: "10",
+    postfix: "+",
+  },
+  {
+    metric: "Projects",
+    value: "10",
+    postfix: "+",
+  },
 ];
 
 const Success = () => {
