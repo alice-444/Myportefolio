@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -21,19 +22,27 @@ const Project = ({
   const [description, setDescription] = useState(existingDescription || "");
   const [project_link, setProjectLink] = useState(existingProjectLink || "");
   const [role, setRole] = useState(existingRole || "");
-  const [technologies, setTechnologies] = useState(
+  const [technologies_used, setTechnologiesUsed] = useState(
     existingTechnologiesUsed || ""
   );
 
   async function createProject(ev) {
     ev.preventDefault();
 
-    const data = { title, description, images };
+    const data = {
+      project_name,
+      description,
+      start_date,
+      end_date,
+      project_link,
+      role,
+      technologies_used,
+    };
     if (_id) {
-      await axios.put("/api/dashboard", { ...data, _id });
+      await axios.put("/api/project", { ...data, _id });
       toast.success("Project updated!!");
     } else {
-      await axios.post("/api/dashboard", data);
+      await axios.post("/api/project", data);
       toast.success("Project created!!");
     }
 
@@ -216,8 +225,8 @@ const Project = ({
               className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
               placeholder="Technologies used"
               required
-              value={technologies}
-              onChange={(ev) => setTechnologies(ev.target.value)}
+              value={technologies_used}
+              onChange={(ev) => setTechnologiesUsed(ev.target.value)}
             />
           </div>
         </div>

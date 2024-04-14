@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -23,10 +24,10 @@ const Exp = ({
 
     const data = { company_name, position, start_date, end_date, description };
     if (_id) {
-      await axios.put("/api/dashboard/experiences", { ...data, _id });
+      await axios.put("/api/experience", { ...data, _id });
       toast.success("Experience updated!!");
     } else {
-      await axios.post("/api/dashboard/experiences", data);
+      await axios.post("/api/experience", data);
       toast.success("Experience created!!");
     }
 
@@ -34,7 +35,7 @@ const Exp = ({
   }
 
   if (redirect) {
-    router.push("/dashboard/experience");
+    router.push("/dashboard/experiences");
     return null;
   }
 
