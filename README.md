@@ -26,11 +26,13 @@ Ce projet est un portefolio personnel conçu pour présenter mes compétences, m
 ## Installation
 
 1. Cloner le dépôt :
-   ```git clone <https://github.com/alice-444/portefolio-V2.git>
+   ```git clone <https://github.com/alice-444/portefolio-V2.git>```
+   
 2.Installer les dépendances :
-    ```npm install
+    ```npm install```
+    
 3.Installer les dépendances :
-    ```npm run dev
+    ```npm run dev```
 
 #API Documentation
 
