@@ -73,11 +73,14 @@ const AboutPage = () => {
                 <th scope="col" class="px-6 py-4 font-medium text-gray-900">
                   Website
                 </th>
-                <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
+                <th
+                  scope="col"
+                  class="px-6 py-4 font-medium text-gray-900"
+                ></th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-              {datas.map((data, index) => (
+              {datasToDisplay.map((data, index) => (
                 <tr class="hover:bg-gray-50" key={data._id}>
                   <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
                     <div class="text-sm">
@@ -94,12 +97,12 @@ const AboutPage = () => {
                   <td class="px-6 py-4">{data.website}</td>
                   <td class="px-6 py-4">
                     <div class="flex justify-end gap-4">
-                      <a x-data="{ tooltip: 'Delete' }" href="#">
+                      <Link href={"/about/delete/" + data._id}>
                         <GoTrash className="w-6 h-6" />
-                      </a>
-                      <a x-data="{ tooltip: 'Edit' }" href="#">
+                      </Link>
+                      <Link href={"/about/edit/" + data._id}>
                         <FiEdit3 className="w-6 h-6" />
-                      </a>
+                      </Link>
                     </div>
                   </td>
                 </tr>

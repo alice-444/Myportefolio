@@ -91,7 +91,7 @@ const Projects = () => {
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-              {datas.map((data, index) => (
+              {datasToDisplay.map((data, index) => (
                 <tr class="hover:bg-gray-50" key={data._id}>
                   <td class="px-6 py-4">{data.project_name}</td>
                   <td class="px-6 py-4">{data.description}</td>
@@ -103,12 +103,12 @@ const Projects = () => {
                   <td class="px-6 py-4">{data.technologies_used}</td>
                   <td class="px-6 py-4">
                     <div class="flex justify-end gap-4">
-                      <a x-data="{ tooltip: 'Delete' }" href="#">
+                    <Link href={"/projects/delete/" + data._id}>
                         <GoTrash className="w-6 h-6" />
-                      </a>
-                      <a x-data="{ tooltip: 'Edit' }" href="#">
+                      </Link>
+                      <Link href={"/projects/edit/" + data._id}>
                         <FiEdit3 className="w-6 h-6" />
-                      </a>
+                      </Link>
                     </div>
                   </td>
                 </tr>

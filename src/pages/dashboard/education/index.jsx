@@ -32,7 +32,7 @@ const EducationPage = () => {
           <div className="sm:flex sm:items-center sm:justify-between">
             <div className="text-center sm:text-left">
               <h1 className="text-xl font-semibold text-gray-900 sm:text-3xl">
-                All data general about my data !
+                All data general about my education !
               </h1>
             </div>
             <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
@@ -80,7 +80,7 @@ const EducationPage = () => {
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-              {datas.map((data, index) => (
+              {datasToDisplay.map((data, index) => (
                 <tr class="hover:bg-gray-50" key={data._id}>
                   
                   <td class="px-6 py-4">{data.formation}</td>
@@ -92,12 +92,12 @@ const EducationPage = () => {
                   <td class="px-6 py-4">{data.description}</td>
                   <td class="px-6 py-4">
                     <div class="flex justify-end gap-4">
-                      <a x-data="{ tooltip: 'Delete' }" href="#">
+                    <Link href={"/education/delete/" + data._id}>
                         <GoTrash className="w-6 h-6" />
-                      </a>
-                      <a x-data="{ tooltip: 'Edit' }" href="#">
-                        <FiEdit3 className="w-6 h-6" />
-                      </a>
+                      </Link>
+                      <Link href={"/education/edit/" + data._id}>
+                        <GoTrash className="w-6 h-6" />
+                      </Link>
                     </div>
                   </td>
                 </tr>

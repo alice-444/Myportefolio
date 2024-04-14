@@ -1,11 +1,18 @@
+import Hero from "@/components/Hero.jsx";
 import Navbar from "@/components/Navbar.jsx";
+import Skills from "@/components/Skills.jsx";
+import Success from "@/components/Success.jsx";
+import AboutMe from "@/components/AboutMe.jsx";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <main>
-        <p>space</p>
+        <Hero />
+        <Success />
+        <AboutMe/>
+        <Skills />
       </main>
     </div>
   );
