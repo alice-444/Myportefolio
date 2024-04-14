@@ -1,4 +1,4 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model} from "mongoose";
 
 const ProjectSchema = new Schema({
   project_name: {
@@ -9,10 +9,6 @@ const ProjectSchema = new Schema({
     type: String,
     required: true,
   },
-  // project_picture: {
-  //   type: String,
-  //   required: true,
-  // },
   start_date: {
     type: Date,
     required: true,
@@ -31,6 +27,6 @@ const ProjectSchema = new Schema({
   },
 });
 
-const Project = models.Project || model("Project", ProjectSchema);
+const Project = model("Project", ProjectSchema);
 
 export default Project;

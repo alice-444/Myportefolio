@@ -1,4 +1,4 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const ExperienceSchema = new Schema({
   company_name: {
@@ -21,6 +21,6 @@ const ExperienceSchema = new Schema({
   },
 });
 
-const Experience = models.Experience || model("Experience", ExperienceSchema);
+const Experience = model("Experience", ExperienceSchema);
 
 export default Experience;

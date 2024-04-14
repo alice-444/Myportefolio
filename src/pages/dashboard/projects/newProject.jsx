@@ -1,5 +1,6 @@
-import Project from "@/components/dashboard/Project.jsx";
 import Navbar from "@/components/dashboard/Navbar.jsx";
+import Project from "@/components/dashboard/Project.jsx";
+
 const NewProject = () => {
   return (
     <div>

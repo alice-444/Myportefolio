@@ -1,13 +1,12 @@
-import Navbar from "@/components/Navbar.jsx"
+import Navbar from "@/components/Navbar.jsx";
 
 const projects = () => {
   return (
     <div>
-
-      <Navbar/>
+      <Navbar />
       <p>Space project</p>
     </div>
-  )
-}
+  );
+};
 
-export default projects
+export default projects;
