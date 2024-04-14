@@ -7,9 +7,6 @@ import { Disclosure } from "@headlessui/react";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
-  // { name: "About", href: "/", current: false },
-  // { name: "Education", href: "/education", current: false },
-  // { name: "Skills", href: "/skills", current: false },
   // { name: "Experiences", href: "/experiences", current: false },
   { name: "Projects", href: "/projects", current: false },
   { name: "Contact", href: "/contact", current: false },
@@ -54,7 +51,7 @@ const Navbar = () => {
                           item.current
                             ? "bg-blue-ribbon-400 text-white shadow-lg"
                             : "text-gray-300 hover:bg-blue-ribbon-500 hover:text-white hover:shadow-lg",
-                          "rounded-lg px-3 py-2 text-xl font-medium"
+                          "rounded-full px-3 py-2 text-xl font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
