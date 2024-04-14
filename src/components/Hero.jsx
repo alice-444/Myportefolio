@@ -39,14 +39,6 @@ const Hero = () => {
             >
               Hire Me
             </Link>
-            <Link
-              href="/"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
-            >
-              <span className="block bg-gradient-to-r from-blue-ribbon-400 to-blue-ribbon-600 hover:bg-slate-500 rounded-full px-5 py-2">
-                Download CV
-              </span>
-            </Link>
           </div>
         </motion.div>
         <motion.div

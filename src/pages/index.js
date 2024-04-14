@@ -4,6 +4,7 @@ import Skills from "@/components/Skills.jsx";
 import Success from "@/components/Success.jsx";
 import AboutMe from "@/components/AboutMe.jsx";
 import Education from "@/components/Education.jsx";
+import Experience from "@/components/Experience.jsx";
 import Certification from "@/components/Certification.jsx";
 
 const Home = () => {
@@ -20,6 +21,8 @@ const Home = () => {
         <Skills />
         <hr className="my-8 h-px border-0 bg-gray-300" />
         <Education />
+        <hr className="my-8 h-px border-0 bg-gray-300" />
+        <Experience />
         <hr className="my-8 h-px border-0 bg-gray-300" />
         <Certification />
       </main>
