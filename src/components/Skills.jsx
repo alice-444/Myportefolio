@@ -1,9 +1,10 @@
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 const Skills = () => {
   return (
-    <div>
-      <p>Skill space</p>
-    </div>
+<p>Skill space</p>
   )
-}
+};
 
-export default Skills
+export default Skills;
