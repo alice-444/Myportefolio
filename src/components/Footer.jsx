@@ -29,8 +29,9 @@ const Footer = () => {
                 Experiences
               </a>
             </li>
+
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/contact" className="hover:underline">
                 Projects
               </a>
             </li>
