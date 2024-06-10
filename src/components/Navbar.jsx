@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className="lg:px-8">
               <div className="flex justify-between h-16 items-center">
                 <div className="flex items-center sm:hidden">
-                  <Disclosure.Button className="inline-flex items-center justify-center rounded-xl p-2 text-gray-400 hover:bg-blue-ribbon-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <Disclosure.Button className="inline-flex items-center justify-center rounded-xl p-2 text-gray-400 hover:bg-blue-ribbon-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                     {open ? (
                       <RxCross2 className="block h-6 w-6" aria-hidden="true" />
                     ) : (
@@ -49,7 +49,7 @@ const Navbar = () => {
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-blue-ribbon-400 text-white shadow-lg"
+                            ? "bg-blue-ribbon-600 text-white shadow-lg"
                             : "text-gray-300 hover:bg-blue-ribbon-500 hover:text-white hover:shadow-lg",
                           "rounded-full px-3 py-2 text-xl font-medium"
                         )}
@@ -73,8 +73,8 @@ const Navbar = () => {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-blue-ribbon-400 text-white shadow-lg"
-                      : "text-gray-300 hover:bg-blue-ribbon-400 hover:text-white hover:shadow-lg",
+                      ? "bg-blue-ribbon-500 text-white shadow-lg"
+                      : "text-gray-300 hover:bg-blue-ribbon-500 hover:text-white hover:shadow-lg",
                     "block rounded-xl px-3 py-2 text-xl font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
