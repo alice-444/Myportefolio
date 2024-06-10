@@ -30,6 +30,27 @@ export default async function handle(req, res) {
   }
 }
 
+/**
+ * @swagger
+ * /api/experience:
+ *   post:
+ *     summary: Create experience data
+ *     description: Create new experience data
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Experience'
+ *     responses:
+ *       '201':
+ *         description: Successfully created experience data
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Experience'
+ */
+
 async function handlePost(req, res) {
   try {
     const { company_name, position, start_date, end_date, description } =
@@ -50,6 +71,23 @@ async function handlePost(req, res) {
   }
 }
 
+/**
+ * @swagger
+ * /api/experience:
+ *   get:
+ *     summary: Get experience data
+ *     description: Retrieve experience data from the database
+ *     responses:
+ *       '200':
+ *         description: Successfully retrieved experience data
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Experience'
+ */
+
 async function handleGet(req, res) {
   try {
     if (req.query?.id) {
@@ -69,6 +107,23 @@ async function handleGet(req, res) {
     res.status(500).json({ error: "Error fetching data" });
   }
 }
+
+/**
+ * @swagger
+ * /api/experience:
+ *   put:
+ *     summary: Update experience data
+ *     description: Update existing experience data
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Experience'
+ *     responses:
+ *       '200':
+ *         description: Successfully updated experience data
+ */
 
 async function handlePut(req, res) {
   try {
@@ -97,6 +152,24 @@ async function handlePut(req, res) {
     res.status(500).json({ error: "Error updating data" });
   }
 }
+
+/**
+ * @swagger
+ * /api/experience:
+ *   delete:
+ *     summary: Delete experience data
+ *     description: Delete existing experience data
+ *     parameters:
+ *       - in: query
+ *         name: id
+ *         required: true
+ *         description: ID of the data to delete
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Successfully deleted experience data
+ */
 
 async function handleDelete(req, res) {
   try {
