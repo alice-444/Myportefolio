@@ -44,6 +44,10 @@ async function handlePost(req, res) {
       social_media,
     } = req.body;
 
+    if (!username || !age || !location || !email || !phone || !short_bio) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
     const AboutDoc = await About.create({
       username,
       age,
@@ -51,7 +55,6 @@ async function handlePost(req, res) {
       email,
       phone,
       short_bio,
-      profile_picture,
       website,
       social_media,
     });
@@ -98,6 +101,10 @@ async function handlePut(req, res) {
       social_media,
     } = req.body;
 
+    if (!_id) {
+      return res.status(400).json({ error: "Missing _id" });
+    }
+    
     const existingAbout = await About.findById(_id);
 
     if (!existingAbout) {

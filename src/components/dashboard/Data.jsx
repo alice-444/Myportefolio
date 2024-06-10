@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useState } from "react";
 import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { ReactSortable } from "react-sortablejs";
 
 const Data = ({
