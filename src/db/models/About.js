@@ -1,4 +1,6 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
+
+const { Schema, model, models } = mongoose;
 
 const AboutSchema = new Schema({
   username: {
@@ -33,6 +35,6 @@ const AboutSchema = new Schema({
   },
 });
 
-const About = model("About", AboutSchema);
+const About = models?.About || model("About", AboutSchema);
 
 export default About;

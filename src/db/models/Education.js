@@ -1,4 +1,6 @@
-import { Schema, model } from "mongoose";
+import mongoose from "mongoose";
+
+const { Schema, model, models } = mongoose;
 
 const EducationSchema = new Schema({
   formation: {
@@ -29,6 +31,6 @@ const EducationSchema = new Schema({
   },
 });
 
-const Education = model("Education", EducationSchema);
+const Education = models?.Education || model("Education", EducationSchema);
 
 export default Education;

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useContext } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Disclosure } from "@headlessui/react";
