@@ -1,4 +1,6 @@
-import { Schema, model} from "mongoose";
+import mongoose from "mongoose";
+
+const { Schema, model, models } = mongoose;
 
 const ProjectSchema = new Schema({
   project_name: {
@@ -27,6 +29,6 @@ const ProjectSchema = new Schema({
   },
 });
 
-const Project = model("Project", ProjectSchema);
+const Project = models?.Project || model("Project", ProjectSchema);
 
 export default Project;
