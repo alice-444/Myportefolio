@@ -1,0 +1,12 @@
+networks:
+  lsu: {}
+
+services:
+  frontend-next:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - 8000:8000
+    networks:
+      - lsu

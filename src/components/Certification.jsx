@@ -9,7 +9,7 @@ const Certification = () => {
               Certification(s)
             </span>
           </h2>
-          <p className="text-base lg:text-lg text-blue-ribbon-600">certifications is not available now</p>
+          <p className="text-base lg:text-lg text-blue-ribbon-600">Certifications is not available now</p>
         </div>
       </div>
     </section>
