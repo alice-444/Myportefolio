@@ -19,10 +19,6 @@ const AboutSchema = new Schema({
     type: String,
     required: true,
   },
-  phone: {
-    type: String,
-    required: true,
-  },
   short_bio: {
     type: String,
     required: true,

@@ -41,7 +41,6 @@ const Data = ({
       age,
       location,
       email,
-      phone,
       short_bio,
       website,
       social_media,
@@ -130,22 +129,6 @@ const Data = ({
               required
               value={email}
               onChange={(ev) => setEmail(ev.target.value)}
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 items-center my-4">
-          <label className="col-span-1 block text-lg font-medium text-gray-700 mb-3">
-            Phone
-          </label>
-          <div className="col-span-2">
-            <input
-              type="text"
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 border p-3"
-              placeholder="Phone"
-              required
-              value={phone}
-              onChange={(ev) => setPhone(ev.target.value)}
             />
           </div>
         </div>
